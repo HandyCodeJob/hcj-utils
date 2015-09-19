@@ -9,3 +9,8 @@ pip install -r requirements.txt
 ```
 export $(cat .env | xargs) && python manage.py
 ```
+
+## Clean out all .pyc files recursively
+```
+find . -name '*.pyc' -delete
+```
