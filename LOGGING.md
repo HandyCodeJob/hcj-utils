@@ -1,4 +1,13 @@
 # Logging with papertrail
+
+Get the v8 deb for rsyslog
+
+```
+sudo add-apt-repository ppa:adiscon/v8-stable
+sudo apt-get update
+sudo apt-get install rsyslog
+```
+
 Get the tls perm and check the md5:
 
 ```
@@ -6,11 +15,11 @@ sudo curl -o /etc/papertrail-bundle.pem https://papertrailapp.com/tools/papertra
 echo c75ce425e553e416bde4e412439e3d09 /etc/papertrail-bundle.pem | md5sum -c -
 ```
 
-Now edit the config file
+Now edit the config file (we will make a newone in *.d/)
 
-`sudo vim /etc/rsyslog.conf`
+`sudo vim /etc/rsyslog.d/22-papertrail.conf`
 
-Then add this to the bottom
+Then add this
 ```
 # Papertrail
 $DefaultNetstreamDriverCAFile /etc/papertrail-bundle.pem # trust these CAs
