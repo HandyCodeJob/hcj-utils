@@ -14,3 +14,9 @@ export $(cat .env | xargs) && python manage.py
 ```
 find . -name '*.pyc' -delete
 ```
+
+## [Finding all files containing a string](http://stackoverflow.com/a/16957078)
+```
+grep -rnw . -e "pattern"
+grep -rnw . -e "pattern" --include=\*.{c,h} --exclude-dir={dir1,dir2,*.dst}
+```
