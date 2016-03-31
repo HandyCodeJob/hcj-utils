@@ -5,6 +5,11 @@ mkvirtualenv --python=/usr/bin/python3 missingkids
 pip install -r requirements.txt
 ```
 
+## Write all envars from heroku app to .env file
+```
+heroku config | tail -n +2 | perl -pe 's/(\w*):\s*(\S*)/$1=$2/g' >> .env
+```
+
 ## Run python with env vars from file
 ```
 export $(cat .env | xargs) && python manage.py
