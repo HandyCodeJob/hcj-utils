@@ -20,6 +20,11 @@ export $(cat .env | xargs) && python manage.py
 find . -name '*.pyc' -delete
 ```
 
+## isort (clean up imports) but skip over some dirs that we should ignore
+```
+isort --skip node_modules --skip docs --skip migrations --skip venv --skip settings
+```
+
 ## [Finding all files containing a string](http://stackoverflow.com/a/16957078)
 ```
 grep -rnw . -e "pattern"
