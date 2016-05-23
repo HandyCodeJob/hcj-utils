@@ -28,5 +28,6 @@ isort --skip node_modules --skip docs --skip migrations --skip venv --skip setti
 ## [Finding all files containing a string](http://stackoverflow.com/a/16957078)
 ```
 grep -rnw . -e "pattern"
+grep -rnw . -e "pattern" --include=\*.{py, html, js} --exclude-dir={docs,node_modules}
 grep -rnw . -e "pattern" --include=\*.{c,h} --exclude-dir={dir1,dir2,*.dst}
 ```
